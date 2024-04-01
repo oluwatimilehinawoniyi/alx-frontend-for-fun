@@ -1,0 +1,62 @@
+:root {
+	--box1: #1cb631;
+	--box2: #127adb;
+	--box3: #3e3674;
+	--box4: #cc0fdd;
+	--box5: #e68341;
+	--large-font-size: 4rem;
+	--box-width: 3.5;
+	--box-height: 2;
+}
+
+.container {
+	display: flex;
+	height: 50vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: translateY(-0.7rem);
+}
+
+.box1,
+.box5 {
+	font-size: calc(var(--large-font-size) * 0.25);
+	width: calc(var(--large-font-size) * 0.25 * var(--box-width));
+	height: calc(var(--large-font-size) * 0.25 * var(--box-height));
+}
+
+.box2,
+.box4 {
+	font-size: calc(var(--large-font-size) * 0.5);
+	width: calc(var(--large-font-size) * 0.5 * var(--box-width));
+	height: calc(var(--large-font-size) * 0.5 * var(--box-height));
+}
+
+.box1 {
+	background: var(--box1);
+}
+
+.box2 {
+	background: var(--box2);
+}
+
+.box3 {
+	background: var(--box3);
+	font-size: calc(var(--large-font-size) * 1);
+	width: calc(var(--large-font-size) * var(--box-width));
+	height: calc(var(--large-font-size) * var(--box-height));
+}
+
+.box4 {
+	background: var(--box4);
+}
+
+.box5 {
+	background: var(--box5);
+}
