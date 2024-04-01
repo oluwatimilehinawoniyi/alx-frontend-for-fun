@@ -39,7 +39,9 @@ if __name__ == "__main__":
             for readLine in md:
                 count = readHashTag(readLine)
                 if count > 0:
-                    html.write(f"<h{count}>{readLine.strip()[count:].strip()}</h{count}>\n")
+                    content = readLine.strip()[count:].strip()
+                    html.write(
+                            f"<h{count}>{content}</h{count}>\n")
                 else:
                     html.write(readLine)
         exit(0)
