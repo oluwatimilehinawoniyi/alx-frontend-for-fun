@@ -42,6 +42,24 @@ if __name__ == "__main__":
                 break
         unorderedList += f'</ul>'
         return unorderedList
+    
+    def orderedListTag(lines, target='*'):
+        """
+        Checks the line for the hyphen symbol ('-') and
+        modify the input to reflect a HTML ordered list
+        Args:
+                line (str): the particular line to be read
+        Return:
+                orderedList (str): formatted string
+        """
+        orderedList = f'<ol>\n'
+        for line in lines:
+            if line.startswith(target):
+                orderedList += f'\t<li>{line[1:].strip()}</li>\n'
+            else:
+                break
+        orderedList += f'</ol>'
+        return orderedList
 
     if len(sys.argv) < 3:
         sys.stderr.write(f'Usage: {sys.argv[0]} README.md README.html\n')
@@ -69,6 +87,13 @@ if __name__ == "__main__":
                         i += 1
                     i -= 1
                     html.write(unorderedListTag(listLines))
+                elif line.startswith("*"):
+                    listLines = []
+                    while i < len(lines) and lines[i].startswith("*"):
+                        listLines.append(lines[i])
+                        i += 1
+                    i -= 1
+                    html.write(orderedListTag(listLines))
                 else:
                     html.write(line + '\n')
                 i += 1
