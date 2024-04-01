@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     def readHashTag(line, target="#"):
         """
-        counts the amount of times '#' occurs in a line
+        counts the amount of times a symbol (default = '#') occurs in a line
         Args:
                 line (str): the particular line to be read
                 target (str): the targeted symbol
