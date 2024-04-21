@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    width: 20%;
+    height: 100vh;
+    /* background-color: #333; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.menu-open{
+    display: none;
+}
+
+.menu-item {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 18px;
+    box-sizing: border-box;
+    margin-right: 10px;
+    color: white;
+    font-size: 1.5rem;
+    background-color: red;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-item:hover {
+    background-color: white;
+    color: red;
+}
+
+.menu-open-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding-top: 25px;
+    box-sizing: border-box;
+    background-color: red;
+    margin-top: 15px;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
+}
+
+.menu-line {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    margin: 5px auto;
+    transition: transform 0.3s;
+}
+
+#menu-open:checked + .menu-open-button .menu-line-1 {
+    transform: translateY(10px) rotate(45deg);
+}
+
+#menu-open:checked + .menu-open-button .menu-line-2 {
+    opacity: 0;
+}
+
+#menu-open:checked + .menu-open-button .menu-line-3 {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+#menu-open:checked + .menu-open-button ~ .menu-item {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-open-button {
+        display: block;
+    }
+
+    .menu-item {
+        display: none;
+    }
+}
