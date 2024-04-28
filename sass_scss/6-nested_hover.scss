@@ -1,0 +1,8 @@
+/* a Sass file that assigns: Text color to button and When the user hovers over button tags */
+
+button {
+	color: #FF0000;
+	&:hover {
+		color: #00FF00;
+	}
+}

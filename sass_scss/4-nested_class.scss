@@ -1,0 +1,13 @@
+/* A Sass file that assigns:
+  Text color #3D3D3D to elements inside body tags
+  Text color #FF0000 to any elements of class .red inside body tags
+*/
+$text-color: #3D3D3D;
+$selected-color: #FF0000;
+
+body{
+	color: $text-color;
+	.red{
+		color: $selected-color;
+	}
+}
